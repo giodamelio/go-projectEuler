@@ -2,6 +2,8 @@ package mathlib
 
 import (
 	"math"
+	"reflect"
+	"strconv"
 )
 
 func Fib(limit int) chan int {
@@ -51,4 +53,13 @@ func PrimeFactors(n float64) []float64 {
 		}
 	}
 	return primeFactors
+}
+
+func IsPalindrome(n float64) bool {
+	reversed := []rune(strconv.FormatInt(int64(n), 10))
+	for i, j := 0, len(reversed)-1; i < j; i, j = i+1, j-1 {
+		reversed[i], reversed[j] = reversed[j], reversed[i]
+	}
+
+	return reflect.DeepEqual([]rune(strconv.FormatInt(int64(n), 10)), reversed)
 }
