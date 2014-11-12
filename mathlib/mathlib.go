@@ -63,3 +63,17 @@ func IsPalindrome(n float64) bool {
 
 	return reflect.DeepEqual([]rune(strconv.FormatInt(int64(n), 10)), reversed)
 }
+
+// Find the greatest common divisor of two numbers
+func GreatestCommonDivisor(a float64, b float64) float64 {
+	if b != 0 {
+		return GreatestCommonDivisor(b, math.Mod(a, b))
+	} else {
+		return a
+	}
+}
+
+// Find the least common multiple of two numbers
+func LeastCommonMultiple(a float64, b float64) float64 {
+	return (a * b) / GreatestCommonDivisor(a, b)
+}
