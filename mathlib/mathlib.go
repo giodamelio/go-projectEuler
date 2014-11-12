@@ -82,3 +82,16 @@ func GreatestCommonDivisor(a float64, b float64) float64 {
 func LeastCommonMultiple(a float64, b float64) float64 {
 	return (a * b) / GreatestCommonDivisor(a, b)
 }
+
+// Get the first n primes
+func FirstNPrimes(n float64) []float64 {
+	var primes []float64
+	var a float64 = 2
+	for float64(len(primes)) < n {
+		if IsPrime(a) {
+			primes = append(primes, a)
+		}
+		a++
+	}
+	return primes
+}
