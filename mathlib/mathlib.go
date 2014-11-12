@@ -6,6 +6,7 @@ import (
 	"strconv"
 )
 
+// Get all the fibanacci numbers below a limit
 func Fib(limit int) chan int {
 	c := make(chan int)
 
@@ -23,6 +24,7 @@ func Fib(limit int) chan int {
 	return c
 }
 
+// Check to see if a number is a prime
 func IsPrime(n float64) bool {
 	sqrtN := math.Sqrt(n)
 	var i float64
@@ -34,6 +36,7 @@ func IsPrime(n float64) bool {
 	return true
 }
 
+// Get the largest element in an array
 func ArrayMax(n []float64) float64 {
 	var max float64 = 0
 	for _, i := range n {
@@ -44,6 +47,7 @@ func ArrayMax(n []float64) float64 {
 	return max
 }
 
+// Get the prime factors of a number
 func PrimeFactors(n float64) []float64 {
 	var primeFactors []float64
 	var i float64
@@ -55,6 +59,7 @@ func PrimeFactors(n float64) []float64 {
 	return primeFactors
 }
 
+// Check to see if the number is a palindrome
 func IsPalindrome(n float64) bool {
 	reversed := []rune(strconv.FormatInt(int64(n), 10))
 	for i, j := 0, len(reversed)-1; i < j; i, j = i+1, j-1 {
