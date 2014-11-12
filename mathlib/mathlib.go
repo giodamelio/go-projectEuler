@@ -95,3 +95,8 @@ func FirstNPrimes(n float64) []float64 {
 	}
 	return primes
 }
+
+// Check to see if three numbers form a Pythagorean triplet
+func IsPythagoreanTriplet(a float64, b float64, c float64) bool {
+	return (a*a)+(b*b) == (c * c)
+}
